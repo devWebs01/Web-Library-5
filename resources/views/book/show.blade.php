@@ -25,20 +25,20 @@ $deleteBook = function ($id) {
 <x-auth.layout>
     <x-slot name="title">Book {{ $book->title }}</x-slot>
 
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <ul class="nav nav-pills mb-3 nav-pills nav-justified" id="pills-tab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="pills-show-tab" data-bs-toggle="pill" data-bs-target="#pills-show"
-                type="button" role="tab" aria-controls="pills-show" aria-selected="true">Detail Buku</button>
+                type="button" role="tab" aria-controls="pills-show" aria-selected="true">Detail Data Buku</button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="pills-update-tab" data-bs-toggle="pill" data-bs-target="#pills-update"
-                type="button" role="tab" aria-controls="pills-update" aria-selected="false">Edit Buku</button>
+                type="button" role="tab" aria-controls="pills-update" aria-selected="false">Ubah Data Buku</button>
         </li>
         <li class="nav-item" role="presentation">
             @volt
                 <div>
                     <button class="nav-link" type="submit" wire:click="deleteBook({{ $book->id }})"
-                        wire:confirm="Are you sure you want to delete this book?">Hapus Buku</button>
+                        wire:confirm="Yakin ingin menghapus data buku ini?">Hapus Data Buku</button>
                 </div>
             @endvolt
         </li>

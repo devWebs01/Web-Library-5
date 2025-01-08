@@ -111,7 +111,7 @@
                                 <th>status</th>
                                 <th>Tanggal Pinjam</th>
                                 <th>Tanggal Kembali</th>
-                                <th>#</th>
+                                <th>Opsi</th>
                             </tr>
                         </thead>
                         <tbody>

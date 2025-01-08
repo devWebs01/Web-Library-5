@@ -38,6 +38,21 @@ class TransactionController extends Controller
     }
     public function return()
     {
+        $oneWeekAgo = Carbon::now()->subWeek();
+        $oneMonthAgo = Carbon::now()->subMonth();
+
+        $weeklyReturns = Transaction::where('status_id', '!=', 1)
+            ->where('status_id', '!=', 2)
+            ->where('status_id', '!=', 8)
+            ->where('updated_at', '>=', $oneWeekAgo)
+            ->count();
+
+        $monthlyReturns = Transaction::where('status_id', '!=', 1)
+            ->where('status_id', '!=', 2)
+            ->where('status_id', '!=', 8)
+            ->where('updated_at', '>=', $oneMonthAgo)
+            ->count();
+
         $transactions = Transaction::where('status_id', '!=', 1)
             ->where('status_id',  '!=', 2)
             ->where('status_id',  '!=', 8)
@@ -46,6 +61,8 @@ class TransactionController extends Controller
 
         return view('transaction.return', [
             'transactions' => $transactions,
+            'weeklyReturns' => $weeklyReturns,
+            'monthlyReturns' => $monthlyReturns,
         ]);
     }
     public function store(TransactionRequest $request)

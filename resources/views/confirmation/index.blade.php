@@ -63,7 +63,7 @@
                             <th>NIS/NIP</th>
                             <th>role</th>
                             <th>status</th>
-                            <th>Action</th>
+                            <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>

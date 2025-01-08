@@ -16,7 +16,7 @@
                             <th>Status</th>
                             <th>Total Denda</th>
                             <th>Status Denda</th>
-                            <th>#</th>
+                            <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>

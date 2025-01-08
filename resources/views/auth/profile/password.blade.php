@@ -36,7 +36,10 @@
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary me-2 waves-effect waves-light">Simpan
-        Perubahan</button>
-    <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
+
+    <div class="text-end">
+        <button type="submit" class="btn btn-primary me-2 waves-effect waves-light">Simpan
+            Perubahan</button>
+        <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
+    </div>
 </form>

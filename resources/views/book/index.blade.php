@@ -31,7 +31,7 @@
                             <th>Jenis buku</th>
                             <th>stok buku</th>
                             <th>kategori buku</th>
-                            <th>Action</th>
+                            <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>

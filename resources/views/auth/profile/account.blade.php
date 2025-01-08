@@ -6,19 +6,23 @@
                 <li class="nav-item">
                     <a class="nav-link active waves-effect waves-light" role="tab" data-bs-toggle="tab"
                         data-bs-target="#navs-pills-top-account" aria-controls="navs-pills-top-account"
-                        aria-selected="true"><i class="mdi mdi-account-outline mdi-20px me-1"></i>Account</a>
+                        aria-selected="true"><i class="mdi mdi-account-outline mdi-20px me-1"></i>
+                        Data Akun
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light" role="tab" data-bs-toggle="tab"
                         data-bs-target="#navs-pills-top-security" aria-controls="navs-pills-top-security"
-                        aria-selected="true"><i class="mdi mdi-lock-open-outline mdi-20px me-1"></i>Security</a>
+                        aria-selected="true"><i class="mdi mdi-lock-open-outline mdi-20px me-1"></i>
+                        Keamanan
+                    </a>
                 </li>
             </ul>
         </div>
         <div class="tab-content">
             <div class="tab-pane fade show active" id="navs-pills-top-account" role="tabpanel">
                 <div class="card mb-4">
-                    <h4 class="card-header">Profile Details</h4>
+                    <h4 class="card-header">Detail Profil</h4>
                     <!-- Account -->
                     <div class="card-body">
                         <form id="formAccountSettings" method="POST" class="fv-plugins-bootstrap5 fv-plugins-framework"
@@ -118,9 +122,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary me-2 waves-effect waves-light">Simpan
-                                Perubahan</button>
-                            <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
+
+                            <div class="text-end">
+                                <button type="submit" class="btn btn-primary me-2 waves-effect waves-light">Simpan
+                                    Perubahan</button>
+                                <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
+                            </div>
                         </form>
                     </div>
                     <!-- /Account -->
@@ -130,19 +137,14 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <h4>Ubah Password</h4>
-                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                aria-label="Close"></button>
-                            <strong>Persyaratan Kata Sandi:</strong>
-                            <ul>
-                                <li> Panjang minimal 8 karakter - semakin banyak, semakin baik
-                                </li>
-                                <li> Setidaknya satu karakter huruf kecil
-                                </li>
-                                <li> Setidaknya satu angka, simbol, atau karakter spasi putih
-                                </li>
-                            </ul>
-                        </div>
+                        <ul class="list-unstyled">
+                            <li>1. Panjang minimal 8 karakter - semakin banyak, semakin baik
+                            </li>
+                            <li>2. Setidaknya satu karakter huruf kecil
+                            </li>
+                            <li>3. Setidaknya satu angka, simbol, atau karakter spasi putih
+                            </li>
+                        </ul>
                     </div>
                     <div class="card-body">
                         @include('auth.profile.password')

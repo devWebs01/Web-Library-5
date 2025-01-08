@@ -14,12 +14,12 @@
                 <table id="example" class="display table nowrap text-center" style="width:100%">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>No.</th>
                             <th>nama lengkap</th>
                             <th>status</th>
                             <th>Tanggal Pinjam - Kembali</th>
                             <th>Terlambat (Hari)</th>
-                            <th>#</th>
+                            <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,7 +45,7 @@
                                             href="{{ route('transactions.show', $item->id) }}" role="button">
                                             Detail Data
                                         </a>
-                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal"
                                             data-bs-target="#modalId">
                                             Tindakan
                                         </button>

@@ -40,7 +40,7 @@
                             <th>Nama Lengkap</th>
                             <th>role</th>
                             <th>telp</th>
-                            <th>Action</th>
+                            <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>

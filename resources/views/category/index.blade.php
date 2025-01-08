@@ -28,7 +28,7 @@
                             <th>No.</th>
                             <th>Kategori</th>
                             <th>Buku</th>
-                            <th>Action</th>
+                            <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
