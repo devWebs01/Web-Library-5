@@ -1,6 +1,6 @@
 <div>
     <div class="col">
-        <select wire:model="selectedStatus" class="form-select form-select-sm" name="status_id" id="status_id" required>
+        <select wire:model.live="selectedStatus" class="form-select form-select-sm" name="status_id" id="status_id" required>
             <option selected disabled>Select one</option>
             @foreach ($statuses as $status)
                 <option class="text-truncate" value="{{ $status->id }}">
@@ -11,6 +11,6 @@
     </div>
     <div class="col">
         <input type="text" class="form-control form-control-sm" placeholder="Pilih Status" name="penalty"
-            wire:model="amount" />
+            wire:model.live="amount" />
     </div>
 </div>

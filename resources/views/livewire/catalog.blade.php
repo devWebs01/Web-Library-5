@@ -6,7 +6,7 @@
         </div>
         <div class="d-flex justify-content-md-end align-items-center gap-3 flex-wrap">
             <div class="position-relative">
-                <select class="form-select" wire:model="category_id" name="" id="">
+                <select class="form-select" wire:model.live="category_id" name="" id="">
                     <option value="">Pilih Kategori</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ Str::limit($category->name, 35, '...') }}</option>
@@ -15,7 +15,7 @@
             </div>
 
             <label class="switch">
-                <input wire:model="search" type="text" class="form-control" name="" id=""
+                <input wire:model.live="search" type="text" class="form-control" name="" id=""
                     aria-describedby="helpId" placeholder="Masukkan judul buku ...">
             </label>
         </div>
