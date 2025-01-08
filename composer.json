@@ -9,13 +9,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "doctrine/dbal": "^3.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
-        "doctrine/dbal": "^3.0",
         "laravel/tinker": "^2.5",
         "laravel/ui": "*",
-        "livewire/livewire": "*"
+        "livewire/livewire": "*",
+        "livewire/volt": "^1.6"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^2.0",

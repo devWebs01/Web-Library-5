@@ -88,8 +88,7 @@
                         </a>
                     </div>
 
-                    <div class="navbar-nav-right d-flex align-items-center rounded-3 shadow px-1 py-2"
-                        id="navbar-collapse">
+                    <div class="navbar-nav-right d-flex align-items-center rounded-3 px-1 py-2" id="navbar-collapse">
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- User -->
@@ -157,31 +156,27 @@
                     <div class="container-xxl flex-grow-1 container-p-y">
                         @if (session('success'))
                             <div class="alert alert-primary alert-dismissible mb-3" role="alert">
-                                <h4 class="alert-heading d-flex align-items-center"><i
-                                        class="mdi mdi-check-circle-outline mdi-24px me-2"></i>Berhasil :)</h4>
-                                <hr>
-                                <p class="mb-0">{{ session('success') }}</p>
+
+                                <i class="mdi mdi-check-circle-outline mdi-24px me-2"></i>
+                                <span>
+                                    {{ session('success') }}
+                                </span>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                                 </button>
                             </div>
                         @elseif ($errors->any())
-                            <div class="alert alert-warning alert-dismissible mb-3" role="alert">
-                                <h4 class="alert-heading d-flex align-items-center"><i
-                                        class="mdi mdi-close-circle mdi-24px me-2"></i>Errors :(</h4>
-
-                                <hr>
+                            <div class="alert alert-danger alert-dismissible mb-3" role="alert">
+                                <i class="mdi mdi-close-circle mdi-24px me-2"></i>
                                 @foreach ($errors->all() as $error)
-                                    <p class="mb-0">{{ $error }}</p>
+                                    <span>{{ $error }}</span>
                                 @endforeach
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                                 </button>
                             </div>
                         @elseif (session('warning'))
                             <div class="alert alert-warning alert-dismissible mb-3" role="alert">
-                                <h4 class="alert-heading d-flex align-items-center"><i
-                                        class="mdi mdi-close-circle mdi-24px me-2"></i>Peringatan :(</h4>
-                                <hr>
-                                <p class="mb-0">{{ session('warning') }}</p>
+                                <i class="mdi mdi-close-circle mdi-24px me-2"></i>
+                                <span>{{ session('warning') }}</span>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                                 </button>
                             </div>
@@ -193,34 +188,11 @@
                     <!-- Footer -->
                     <footer class="container text-center ">
                         <!-- Grid container -->
-                        <section class="mb-4">
-                            <!-- Facebook -->
-                            <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998"
-                                href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
 
-                            <!-- Twitter -->
-                            <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee"
-                                href="#!" role="button"><i class="fab fa-twitter"></i></a>
-
-                            <!-- Google -->
-                            <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39"
-                                href="#!" role="button"><i class="fab fa-google"></i></a>
-
-                            <!-- Instagram -->
-                            <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac"
-                                href="#!" role="button"><i class="fab fa-instagram"></i></a>
-
-                            <!-- Linkedin -->
-                            <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca"
-                                href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-                            <!-- Github -->
-                            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333"
-                                href="#!" role="button"><i class="fab fa-github"></i></a>
-                        </section>
                         <div class="">
                             <!-- Copyright -->
                             <div class="text-center p-3">
-                                © 2024 - <a class="text-dark" href="#">SMA 11 Kota Jambi</a>
+                                © {{ date('Y') }} - <a class="text-dark" href="#">SMK 6 Kota Jambi</a>
                             </div>
                             <!-- Copyright -->
                     </footer>

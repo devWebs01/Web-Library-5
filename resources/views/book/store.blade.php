@@ -84,7 +84,7 @@
                             <div class="mb-3">
                                 <label for="category_id" class="form-label">Kategori Buku</label>
                                 <select class="form-select" name="category_id" id="category_id">
-                                    <option selected>Select one</option>
+                                    <option selected>Pilih satu</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach

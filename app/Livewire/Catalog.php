@@ -18,22 +18,22 @@ class Catalog extends Component
     {
         // Dapatkan semua buku jika tidak ada search dan category
         if (!$this->search && !$this->category_id) {
-            $books = Book::latest()->get();
+            $books = Book::latest()->paginate(9);
         }
 
         // Dapatkan buku berdasarkan search
         elseif ($this->search && !$this->category_id) {
-            $books = Book::where('title', 'like', '%' . $this->search . '%')->latest()->get();
+            $books = Book::where('title', 'like', '%' . $this->search . '%')->latest()->paginate(9);
         }
 
         // Dapatkan buku berdasarkan category
         elseif (!$this->search && $this->category_id) {
-            $books = Book::where('category_id', $this->category_id)->latest()->get();
+            $books = Book::where('category_id', $this->category_id)->latest()->paginate(9);
         }
 
         // Dapatkan buku berdasarkan search dan category
         else {
-            $books = Book::where('title', 'like', '%' . $this->search . '%')->where('category_id', $this->category_id)->latest()->get();
+            $books = Book::where('title', 'like', '%' . $this->search . '%')->where('category_id', $this->category_id)->latest()->paginate(9);
         }
 
         return view('livewire.catalog', [

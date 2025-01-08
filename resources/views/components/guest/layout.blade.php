@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="/assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
+    @livewireStyles
 
     <!-- Helpers -->
     <script src="/assets/vendor/js/helpers.js"></script>
@@ -44,43 +45,61 @@
             font-family: 'Belanosima', sans-serif;
             font-family: 'Gabarito', cursive;
         }
+
+        .card-cover {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-cover .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Warna hitam dengan transparansi */
+            z-index: 1;
+        }
+
+        .card-cover .text-shadow-1 {
+            z-index: 2;
+            position: relative;
+        }
     </style>
 
-    @livewireStyles
-
+    @vite([])
 </head>
 
 <body>
     @include('layouts.payment_date')
+
     <x-guest.navbar></x-guest.navbar>
-    <div class="container">
+
+    <div class="container-fluid">
         @if (session('success'))
             <div class="alert alert-primary alert-dismissible mb-3" role="alert">
-                <h4 class="alert-heading d-flex align-items-center"><i
-                        class="mdi mdi-check-circle-outline mdi-24px me-2"></i>Well done :)</h4>
-                <hr>
-                <p class="mb-0">{{ session('success') }}</p>
+
+                <i class="mdi mdi-check-circle-outline mdi-24px me-2"></i>
+                <span>
+                    {{ session('success') }}
+                </span>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                 </button>
             </div>
         @elseif ($errors->any())
             <div class="alert alert-danger alert-dismissible mb-3" role="alert">
-                <h4 class="alert-heading d-flex align-items-center"><i
-                        class="mdi mdi-close-circle mdi-24px me-2"></i>Opps :(</h4>
-
-                <hr>
+                <i class="mdi mdi-close-circle mdi-24px me-2"></i>
                 @foreach ($errors->all() as $error)
-                    <p class="mb-0">{{ $error }}</p>
+                    <span>{{ $error }}</span>
                 @endforeach
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                 </button>
             </div>
         @elseif (session('warning'))
-            <div class="alert alert-danger alert-dismissible mb-3" role="alert">
-                <h4 class="alert-heading d-flex align-items-center"><i
-                        class="mdi mdi-close-circle mdi-24px me-2"></i>Opps :(</h4>
-                <hr>
-                <p class="mb-0">{{ session('warning') }}</p>
+            <div class="alert alert-warning alert-dismissible mb-3" role="alert">
+                <i class="mdi mdi-close-circle mdi-24px me-2"></i>
+                <span>{{ session('warning') }}</span>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                 </button>
             </div>
@@ -109,34 +128,10 @@
     <!-- Footer -->
     <footer class="container p-4 text-center ">
         <!-- Grid container -->
-        <section class="mb-4">
-            <!-- Facebook -->
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!"
-                role="button"><i class="fab fa-facebook-f"></i></a>
-
-            <!-- Twitter -->
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!"
-                role="button"><i class="fab fa-twitter"></i></a>
-
-            <!-- Google -->
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="#!"
-                role="button"><i class="fab fa-google"></i></a>
-
-            <!-- Instagram -->
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!"
-                role="button"><i class="fab fa-instagram"></i></a>
-
-            <!-- Linkedin -->
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!"
-                role="button"><i class="fab fa-linkedin-in"></i></a>
-            <!-- Github -->
-            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="#!"
-                role="button"><i class="fab fa-github"></i></a>
-        </section>
         <div class="">
             <!-- Copyright -->
             <div class="text-center p-3">
-                © 2024 - <a class="text-dark" href="#">SMA 11 Kota Jambi</a>
+                © {{ date('Y') }} - <a class="text-dark" href="#">SMK 6 Kota Jambi</a>
             </div>
             <!-- Copyright -->
     </footer>

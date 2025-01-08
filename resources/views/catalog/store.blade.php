@@ -9,9 +9,10 @@
         <div class="modal-content">
             <form action="{{ route('catalog.store') }}" method="post">
                 @csrf
-                <div class="modal-body">
-                    <h3 class="text-center fw-bold mb-2">Apakah Anda ingin melanjutkan dan memesan buku di perpustakaan?</h3>
-                    <p class="text-center">Proses
+                <div class="modal-body text-center">
+                    <h3 class="fw-bold mb-5 lh-1">Apakah Anda ingin melanjutkan dan memesan buku di
+                        perpustakaan?</h3>
+                    <p>Proses
                         peminjaman buku akan dilakukan setelah peminjam memenuhi syarat dan ketentuan yang berlaku di
                         perpustakaan.</p>
 
@@ -21,9 +22,9 @@
                     <input type="hidden" name="book_id" value="{{ $book->id }}">
                     <input type="hidden" name="status" value="Menunggu">
                 </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kembali</button>
-                    <button type="submit" class="btn btn-primary">Lanjut</button>
+                <div class="modal-footer row">
+                    <button type="button" class="btn btn-secondary col-md" data-bs-dismiss="modal">Kembali</button>
+                    <button type="submit" class="btn btn-primary col-md">Lanjut</button>
                 </div>
             </form>
         </div>

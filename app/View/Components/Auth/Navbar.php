@@ -25,7 +25,7 @@ class Navbar extends Component
      */
     public function render()
     {
-        return view('components.auth.navbar', [
+        return view('components.admin.navbar', [
             'pending' => User::whereNull('email_verified_at')->count(),
         ]);
     }

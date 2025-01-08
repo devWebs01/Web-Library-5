@@ -1,42 +1,3 @@
-{{-- <div class="table-responsive">
-    <table id="example" class="display table nowrap" style="width:100%">
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Name</th>
-                <th>email</th>
-                <th>telp</th>
-                <th>image</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($users as $no => $item)
-                <tr>
-                    <td>{{ ++$no }}.</td>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->email }}</td>
-                    <td>{{ $item->telp }}</td>
-                    <td><img src="{{ $item->image ?? 'https://source.unsplash.com/random/?karate' }}"
-                            class="rounded-circle avatar avatar-sm" style="object-fit: cover;" alt="user image"></td>
-                    <td>
-                        <div class="d-flex gap-3 justify-content-center">
-                            <a class="btn btn-info btn-sm" href="{{ route('users.show', $item->id) }}"
-                                role="button">Detail</a>
-                            <form action="{{ route('users.destroy', $item->id) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div> --}}
-
-
 @push('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css">
@@ -49,21 +10,18 @@
         }
 
         /* mode dark */
-        .pagination .page-item.disabled .page-link {
-            color: #fff;
-            /* Set disabled link text color to white */
-            background-color: #323349;
-            /* Set disabled link background color to match paginate background */
-        }
+        /* .pagination .page-item.disabled .page-link {
+                color: #fff;
+                background-color: #323349;
+            }
 
-        .pagination .page-item .page-link:hover {
-            color: #fff;
-            /* Set link text color to white on hover */
-            background-color: #6c757d;
-            /* Set link background color on hover */
-            border-color: #6c757d;
-            /* Set link border color on hover */
-        }
+            .pagination .page-item .page-link:hover {
+                color: #fff;
+                background-color: #6c757d;
+                border-color: #6c757d;
+            } */
+
+            
     </style>
 @endpush
 @push('scripts')

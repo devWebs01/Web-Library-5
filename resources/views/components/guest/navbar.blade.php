@@ -10,14 +10,15 @@
             </button>
             <div class="collapse navbar-collapse" id="nav_lc">
                 <ul class="navbar-nav my-3 my-lg-0 ms-lg-3 me-auto">
-                    <li class="nav-item me-4"><a class="nav-link" href="/">Beranda</a></li>
-                    <li class="nav-item me-4"><a class="nav-link" href="{{ route('catalog.index') }}">Koleksi Buku</a>
+                    <li class="nav-item me-4"><a class="nav-link text-white" href="/">Beranda</a></li>
+                    <li class="nav-item me-4"><a class="nav-link text-white" href="{{ route('catalog.index') }}">Koleksi
+                            Buku</a>
                     </li>
                 </ul>
                 <div>
                     @auth
                         @if (auth()->user()->role == 'Anggota')
-                            <a class="btn btn-outline-primary me-2" href="{{ route('catalog.history') }}">Riwayat</a>
+                            <a class="btn btn-primary me-2" href="{{ route('catalog.history') }}">Riwayat</a>
                             <a class="btn btn-danger me-2" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">Logout</a>
@@ -25,10 +26,10 @@
                                 @csrf
                             </form>
                         @else
-                            <a class="btn btn-outline-primary me-2" href="/home">Beranda Admin</a>
+                            <a class="btn btn-primary me-2" href="/home">Beranda Admin</a>
                         @endif
                     @else
-                        <a class="btn btn-outline-primary me-2" href="/login">Masuk</a>
+                        <a class="btn btn-primary me-2" href="/login">Masuk</a>
                         <a class="btn btn-primary" href="/register">Daftar</a>
                     @endauth
                 </div>

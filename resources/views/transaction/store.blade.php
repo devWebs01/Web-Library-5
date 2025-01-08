@@ -7,7 +7,7 @@
                 <div class="mb-3">
                     <label for="user_id" class="form-label">Nama Lengkap</label>
                     <select class="form-select" name="user_id" id="user_id">
-                        <option selected>Select one</option>
+                        <option selected>Pilih satu</option>
                         @foreach ($users as $user)
                             <option value="{{ $user->id }}">{{ $user->name }} - {{ $user->identify }} -
                                 {{ $user->status }}</option>
@@ -19,7 +19,7 @@
                 <div class="mb-3">
                     <label for="book_id" class="form-label">Buku</label>
                     <select class="form-select" name="book_id" id="book_id">
-                        <option selected>Select one</option>
+                        <option selected>Pilih satu</option>
                         @foreach ($books as $book)
                             <option
                                 class="text-truncate

@@ -9,58 +9,87 @@
 
     <div class="card">
         <div class="card-body">
-            <h4 class="text-center">Tabel Peminjaman Buku</h4>
+            <h5 class="text-center fw-bold">Tabel Peminjaman Buku</h5>
             <div class="table-responsive">
                 <table id="example" class="display table nowrap text-center" style="width:100%">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>nama lengkap</th>
-                            <th>status Transaksi</th>
-                            <th>Tanggal Pinjam</th>
-                            <th>Tanggal Kembali</th>
-                            <th>Jumlah Terlambat (Hari)</th>
-                            <th>Tindakan</th>
+                            <th>status</th>
+                            <th>Tanggal Pinjam - Kembali</th>
+                            <th>Terlambat (Hari)</th>
                             <th>#</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($transactions as $item)
+                        @foreach ($transactions as $no => $item)
                             <tr>
                                 <td>
-                                    <div class="d-flex gap-2">
-                                        <a class="btn btn-primary btn-sm"
-                                            href="{{ route('transactions.show', $item->id) }}" role="button">Lihat</a>
-                                    </div>
+                                    {{ ++$no }}.
                                 </td>
                                 <td>{{ $item->user->name }}</td>
                                 <td>{{ $item->status->name }}</td>
                                 <td>
                                     {{ $item->borrow_date != null ? \Carbon\Carbon::parse($item->borrow_date)->format('d M Y') : '-' }}
-                                </td>
-                                <td>
+                                    -
                                     {{ $item->return_date != null ? \Carbon\Carbon::parse($item->return_date)->format('d M Y') : '-' }}
                                 </td>
                                 <td>
                                     {{ $item->return_date <= now() ? Carbon\carbon::parse($item->return_date)->diffInDays(now()) : '0' }}
                                     Hari
                                 </td>
-                                <form action="{{ route('transactions.action', $item->id) }}" method="post">
-                                    <td>
-                                        <div style="width: 120px">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="row d-block">
-                                                @livewire('status', ['statusId' => $item->id])
+                                <td>
+                                    <div class="d-flex gap-2">
+                                        <a class="btn btn-outline-primary btn-sm"
+                                            href="{{ route('transactions.show', $item->id) }}" role="button">
+                                            Detail Data
+                                        </a>
+                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#modalId">
+                                            Tindakan
+                                        </button>
+                                    </div>
+
+                                    <!-- Modal trigger button -->
+
+                                    <!-- Modal Body -->
+                                    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                                    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static"
+                                        data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
+                                            role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modalTitleId">
+                                                        Perbarui status pengembalian buku
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <form action="{{ route('transactions.action', $item->id) }}"
+                                                    method="post">
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <div class="modal-body">
+
+                                                        @livewire('status', ['statusId' => $item->id])
+                                                    </div>
+                                                    <div class="modal-footer row">
+                                                        <button type="button" class="col-md btn btn-secondary"
+                                                            data-bs-dismiss="modal">
+                                                            Kembali
+                                                        </button>
+                                                        <button type="submit"
+                                                            class="col-md btn btn-primary">Submit</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            Submit
-                                        </button>
-                                    </td>
-                                </form>
+                                    </div>
+
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -68,66 +97,4 @@
             </div>
         </div>
     </div>
-
-
-    {{-- <div class="card">
-        <div class="card-header">
-            <div class="nav-align-top">
-                <ul class="nav nav-tabs nav-fill" role="tablist">
-                    <li class="nav-item">
-                        <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab"
-                            data-bs-target="#navs-justified-waiting" aria-controls="navs-justified-waiting"
-                            aria-selected="true"><i
-                                class="tf-icons mdi mdi-receipt-text-clock-outline mdi-20px me-1"></i> Menunggu
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
-                            data-bs-target="#navs-justified-walking" aria-controls="navs-justified-walking"
-                            aria-selected="false"><i class="tf-icons mdi mdi-timer-sand-complete mdi-20px me-1"></i>
-                            Berjalan
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
-                            data-bs-target="#navs-justified-penalty" aria-controls="navs-justified-penalty"
-                            aria-selected="false"><i class="tf-icons mdi mdi-alert-box-outline mdi-20px me-1"></i>
-                            Terlambat
-                        </button>
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
-                            data-bs-target="#navs-justified-finished" aria-controls="navs-justified-finished"
-                            aria-selected="false"><i class="tf-icons mdi mdi-tag-check mdi-20px me-1"></i>
-                            Selesai
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="card-body">
-            <div class="tab-content p-0">
-                <div class="tab-pane fade show active" id="navs-justified-waiting" role="tabpanel">
-                    <div class="card-body">
-                        @include('transaction.table.index')
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="navs-justified-walking" role="tabpanel">
-                    <div class="card-body">
-                        @include('transaction.table.walking')
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="navs-justified-penalty" role="tabpanel">
-                    <div class="card-body">
-                        @include('transaction.table.penalty')
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="navs-justified-finished" role="tabpanel">
-                    <div class="card-body">
-                        @include('transaction.table.finished')
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 </x-auth.layout>

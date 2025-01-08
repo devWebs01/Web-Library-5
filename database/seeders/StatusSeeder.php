@@ -16,11 +16,12 @@ class StatusSeeder extends Seeder
     {
         $statuses = [
             [
-                'name' => 'Menunggu Konfirmasi', // 1
+                // 'name' => 'Menunggu Konfirmasi', // 1
+                'name' => 'Menunggu Persetujuan', // 1
                 'amount' => 0,
             ],
             [
-                'name' => 'Konfirmasi (Berjalan)', // 2
+                'name' => 'Konfirmasi Pinjam', // 2
                 'amount' => 0,
             ],
             [
@@ -50,7 +51,7 @@ class StatusSeeder extends Seeder
 
         ];
         foreach ($statuses as $status) {
-           Status::create($status);
+            Status::create($status);
         }
     }
 }
