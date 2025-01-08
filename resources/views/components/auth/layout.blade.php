@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="/assets/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
+    @livewireStyles
 
     <!-- Helpers -->
     <script src="/assets/vendor/js/helpers.js"></script>
@@ -46,7 +47,8 @@
             font-family: 'Gabarito', cursive;
         }
     </style>
-    @livewireStyles
+
+    @vite([])
 </head>
 
 <body>
