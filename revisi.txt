@@ -1,0 +1,17 @@
+1. Kasi pembeda buku paket dan buku umum ✅
+
+2. Tampilan jika guru login ✅
+
+3. Perbaikan konfirmasi buku, siapa yang di dahulukan, anggota yang booking buku atau anggota yang meminjam langsung? ✅
+
+4. Tampilan jumlah Buku di menu buku ✅
+
+5. Tambahkan pembeda antara anggota siswa, guru, staf ✅
+
+6. Tambahkan batas maksimal peminjaman buku ✅
+
+7. Perbaiki pemberitahuan gagal ✅
+
+8. ganti denda terlambat jadi 500 ✅
+
+Clear
