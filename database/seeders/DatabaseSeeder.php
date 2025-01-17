@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Book;
 use App\Models\Category;
 use App\Models\Transaction;
 use App\Models\User;

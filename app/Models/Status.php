@@ -17,8 +17,6 @@ class Status extends Model
 
     /**
      * Get all of the transactions for the Status
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function transactions(): HasMany
     {

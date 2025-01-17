@@ -9,6 +9,7 @@ class CreateTransactionsTable extends Migration
     /**
      * Run the migrations.
      *'code','book_id','user_id','borrow_date','return_date','status'
+     *
      * @return void
      */
     public function up()

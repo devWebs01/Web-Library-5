@@ -19,9 +19,9 @@ class ProfileController extends Controller
     {
         $validate = $request->validate([
             'name' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'email', 'max:50', 'unique:users,email, ' . $id],
-            'identify' => ['required', 'numeric', 'digits_between:8,30', 'unique:users,identify, ' . $id],
-            'gender'  => ['required', 'in:Laki-laki,Perempuan'],
+            'email' => ['required', 'string', 'email', 'max:50', 'unique:users,email, '.$id],
+            'identify' => ['required', 'numeric', 'digits_between:8,30', 'unique:users,identify, '.$id],
+            'gender' => ['required', 'in:Laki-laki,Perempuan'],
             'telp' => ['required', 'numeric', 'digits_between:11,12'],
             'birthdate' => ['required', 'date'],
         ]);

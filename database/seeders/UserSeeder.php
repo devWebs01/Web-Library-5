@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
                 'gender' => 'Laki-laki',
                 'identify' => '1234567891',
                 'email_verified_at' => now(),
-                'status' => 'Siswa'
+                'status' => 'Siswa',
             ],
             [
                 'name' => 'Petugas',
@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
                 'gender' => 'Laki-laki',
                 'identify' => '1234567892',
                 'email_verified_at' => now(),
-                'status' => 'Guru'
+                'status' => 'Guru',
 
             ],
             [
@@ -53,7 +53,7 @@ class UserSeeder extends Seeder
                 'gender' => 'Laki-laki',
                 'identify' => '1234567893',
                 'email_verified_at' => now(),
-                'status' => 'Kepala'
+                'status' => 'Kepala',
 
             ],
         ];

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Transaction;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
@@ -43,5 +42,4 @@ class ReportController extends Controller
             'penalties' => Transaction::whereIn('status_id', [3, 5, 6, 7])->latest()->get(),
         ]);
     }
-
 }

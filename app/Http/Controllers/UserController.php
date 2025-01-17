@@ -7,8 +7,6 @@ use App\Models\Transaction;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-
 
 class UserController extends Controller
 {
@@ -24,6 +22,7 @@ class UserController extends Controller
                 ->get(),
         ]);
     }
+
     public function officer()
     {
         return view('user.officer', [
@@ -36,12 +35,13 @@ class UserController extends Controller
                 ->get(),
         ]);
     }
+
     public function store(UserRequest $request)
     {
         $password = Carbon::parse($request->birthdate)->format('dmY');
 
         $data = $request->validated();
-        $data['slug'] = Str::slug($request->name) . Str::random(5);
+        $data['slug'] = Str::slug($request->name).Str::random(5);
         $data['email_verified_at'] = now();
         $data['password'] = bcrypt($password);
 
@@ -49,12 +49,13 @@ class UserController extends Controller
 
         return back()->with('success', 'Proses penambahan data telah berhasil dilakukan.');
     }
+
     public function update(UserRequest $request, $id)
     {
         $user = User::findOrFail($id);
 
         $data = $request->validated();
-        $data['slug'] = Str::slug($request->name) . Str::random(5);
+        $data['slug'] = Str::slug($request->name).Str::random(5);
 
         if ($request->filled('password')) {
             $data['password'] = bcrypt($request->password);
@@ -64,18 +65,22 @@ class UserController extends Controller
 
         return back()->with('success', 'Proses penambahan data telah berhasil dilakukan.');
     }
+
     public function show($slug)
     {
         $user = User::whereSlug($slug)->first();
+
         return view('user.show', [
             'user' => $user,
             'transaction' => Transaction::where('user_id', $user->id)
                 ->get(),
         ]);
     }
+
     public function destroy($id)
     {
         User::findOrFail($id)->delete();
+
         return back()->with('success', 'Proses penghapusan data telah berhasil dilakukan.');
     }
 }

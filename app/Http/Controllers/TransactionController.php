@@ -33,14 +33,15 @@ class TransactionController extends Controller
             'users' => $users,
             'books' => $books,
             'transactions' => $transactions,
-            'statuses' => $statuses
+            'statuses' => $statuses,
         ]);
     }
+
     public function return()
     {
         $transactions = Transaction::where('status_id', '!=', 1)
-            ->where('status_id',  '!=', 2)
-            ->where('status_id',  '!=', 8)
+            ->where('status_id', '!=', 2)
+            ->where('status_id', '!=', 8)
             ->orderBy('updated_at', 'desc')
             ->get();
 
@@ -48,6 +49,7 @@ class TransactionController extends Controller
             'transactions' => $transactions,
         ]);
     }
+
     public function store(TransactionRequest $request)
     {
         $validate = $request->validated();
@@ -72,7 +74,6 @@ class TransactionController extends Controller
             $validate['code'] = Str::random(10);
             $validate['status_id'] = 2;
 
-
             Transaction::create($validate);
 
             return back()->with('success', 'Proses penambahan data telah berhasil dilakukan.');
@@ -92,6 +93,7 @@ class TransactionController extends Controller
             compact('transaction', 'users', 'books', 'statuses')
         );
     }
+
     public function update(TransactionRequest $request, $id)
     {
         $validate = $request->validated();
@@ -114,6 +116,7 @@ class TransactionController extends Controller
 
         return back()->with('success', 'Proses perubahan data telah berhasil dilakukan.');
     }
+
     public function destroy($id)
     {
         $transaction = Transaction::findOrFail($id);
@@ -123,8 +126,10 @@ class TransactionController extends Controller
         $book->save();
 
         $transaction->delete();
+
         return redirect()->route('transactions.index')->with('success', 'Proses penghapusan data telah berhasil dilakukan.');
     }
+
     public function confirmation(Request $request, $id)
     {
         $validate = $request->validate([
@@ -139,6 +144,7 @@ class TransactionController extends Controller
 
         return back()->with('success', 'Proses penambahan data peminjaman dan pengembalian buku berhasil telah berhasil dilakukan.');
     }
+
     public function finished($id)
     {
         $transaction = Transaction::findOrfail($id);

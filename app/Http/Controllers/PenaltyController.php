@@ -3,17 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PenaltyRequest;
-use App\Models\Book;
 use App\Models\Penalty;
 use App\Models\Transaction;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class PenaltyController extends Controller
 {
     public function create($id)
     {
         $transaction = Transaction::find($id);
+
         return view('penalty.create', compact('transaction'));
     }
 
@@ -25,7 +23,7 @@ class PenaltyController extends Controller
         Penalty::create([
             'transaction_id' => $request->transaction_id,
             'image' => $storagePath,
-            'status' => 'Lunas'
+            'status' => 'Lunas',
         ]);
 
         if (Auth()->user()->role == 'Anggota') {
@@ -38,6 +36,7 @@ class PenaltyController extends Controller
     public function show($id)
     {
         $transaction = Transaction::find($id);
+
         return view('history.show', compact('transaction'));
     }
 }

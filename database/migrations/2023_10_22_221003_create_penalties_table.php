@@ -9,6 +9,7 @@ class CreatePenaltiesTable extends Migration
     /**
      * Run the migrations.
      *  'transaction_id', 'amount', 'lates_day', 'payment_date'
+     *
      * @return void
      */
     public function up()

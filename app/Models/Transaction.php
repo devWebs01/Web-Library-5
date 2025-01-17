@@ -14,7 +14,7 @@ class Transaction extends Model
     protected $with = [
         'book',
         'user',
-        'penalties'
+        'penalties',
     ];
 
     protected $fillable = [
@@ -49,8 +49,6 @@ class Transaction extends Model
 
     /**
      * Get all of the penalties for the Transaction
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function penalties(): HasMany
     {
@@ -59,8 +57,6 @@ class Transaction extends Model
 
     /**
      * Get the status that owns the Transaction
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function status(): BelongsTo
     {
