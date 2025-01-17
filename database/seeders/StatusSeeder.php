@@ -26,7 +26,7 @@ class StatusSeeder extends Seeder
             ],
             [
                 'name' => 'Terlambat', // 3
-                'amount' => '500'
+                'amount' => '500',
             ],
             [
                 'name' => 'Dikembalikan', // 4
@@ -34,15 +34,15 @@ class StatusSeeder extends Seeder
             ],
             [
                 'name' => 'Hilang', // 5
-                'amount' => '50000'
+                'amount' => '50000',
             ],
             [
                 'name' => 'Rusak Ringan', // 6
-                'amount' => '5000'
+                'amount' => '5000',
             ],
             [
                 'name' => 'Rusak Berat', // 7
-                'amount' => '10000'
+                'amount' => '10000',
             ],
             [
                 'name' => 'Tolak', // 8

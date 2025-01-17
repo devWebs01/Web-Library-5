@@ -8,8 +8,11 @@ use Livewire\Component;
 class Status extends Component
 {
     public $statusId;
+
     public $status;
+
     public $selectedStatus;
+
     public $amount;
 
     public function mount($statusId = null)

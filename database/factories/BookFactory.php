@@ -16,7 +16,7 @@ class BookFactory extends Factory
     public function definition()
     {
         $imagePath = 'assets/img/Example-Cover.png';
-        $storagePath = 'images/' . $imagePath;
+        $storagePath = 'images/'.$imagePath;
         Storage::disk('public')->put($storagePath, file_get_contents(public_path($imagePath)));
 
         return [
@@ -29,7 +29,7 @@ class BookFactory extends Factory
             'publisher' => $this->faker->company(),
             'synopsis' => $this->faker->paragraph(),
             'book_count' => $this->faker->numberBetween(1, 10),
-            'type' => $this->faker->randomElement(['Paket', 'Umum'])
+            'type' => $this->faker->randomElement(['Paket', 'Umum']),
         ];
     }
 }

@@ -13,13 +13,11 @@ class Penalty extends Model
     protected $fillable = [
         'transaction_id',
         'image',
-        'status'
+        'status',
     ];
 
     /**
      * Get the transaction that owns the Penalty
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function transaction(): BelongsTo
     {

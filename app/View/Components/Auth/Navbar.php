@@ -2,7 +2,6 @@
 
 namespace App\View\Components\Auth;
 
-use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\View\Component;
 

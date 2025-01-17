@@ -37,17 +37,19 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
     protected function authenticated()
     {
-        if (!Auth()->user()->email_verified_at) {
+        if (! Auth()->user()->email_verified_at) {
             auth()->logout();
+
             return redirect('/login')->with('error', 'Akun Anda belum terverifikasi.');
-        }else{
+        } else {
             if (Auth()->user()->role == 'Anggota') {
-                # code... 'Petugas', 'Anggota', 'Kepala'
+                // code... 'Petugas', 'Anggota', 'Kepala'
                 return redirect('/');
             } else {
-                # code...
+                // code...
                 return redirect('/home');
             }
 

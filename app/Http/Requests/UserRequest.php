@@ -25,9 +25,9 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:50',
-            'email' => 'required|string|email|max:50|unique:users,email,' . $this->id,
-            'identify' => 'required|numeric|digits_between:8,30|unique:users,identify,' . $this->id,
-            'gender'  => 'required|in:Laki-laki,Perempuan',
+            'email' => 'required|string|email|max:50|unique:users,email,'.$this->id,
+            'identify' => 'required|numeric|digits_between:8,30|unique:users,identify,'.$this->id,
+            'gender' => 'required|in:Laki-laki,Perempuan',
             'telp' => 'required|numeric|digits_between:11,12',
             'role' => 'required|in:Petugas,Anggota,Kepala',
             'birthdate' => 'required|date',

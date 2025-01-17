@@ -36,7 +36,7 @@ class BookRequest extends FormRequest
             'bookshelf' => 'nullable|string',
             'source' => 'nullable|string',
             'price' => 'nullable|numeric',
-            'type' => 'required|in:Umum,Paket'
+            'type' => 'required|in:Umum,Paket',
         ];
     }
 }

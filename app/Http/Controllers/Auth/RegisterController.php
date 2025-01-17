@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -46,7 +46,6 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -56,7 +55,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:50', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'identify' => ['required', 'numeric', 'digits_between:8,30', 'unique:users,identify'],
-            'gender'  => ['required', 'in:Laki-laki,Perempuan'],
+            'gender' => ['required', 'in:Laki-laki,Perempuan'],
             'telp' => ['required', 'numeric', 'digits_between:11,12', 'unique:users'],
             'role' => ['required', 'in:Anggota'],
             'birthdate' => ['required', 'date'],
@@ -66,7 +65,6 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
      * @return \App\Models\User
      */
     protected function create(array $data)
@@ -75,7 +73,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'slug' => Str::slug($data['name']) . Str::random(5),
+            'slug' => Str::slug($data['name']).Str::random(5),
             'identify' => $data['identify'],
             'gender' => $data['gender'],
             'telp' => $data['telp'],

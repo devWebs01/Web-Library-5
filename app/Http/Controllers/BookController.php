@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Book;
 use App\Http\Requests\BookRequest;
+use App\Models\Book;
 use App\Models\Category;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +17,7 @@ class BookController extends Controller
             'categories' => Category::get(),
             'transactions' => Transaction::where('status_id', 2)
                 ->orWhere('status_id', 3)
-                ->get()
+                ->get(),
         ]);
     }
 
@@ -36,7 +36,7 @@ class BookController extends Controller
     {
         return view('book.show', [
             'book' => Book::findOrFail($id),
-            'categories' => Category::get()
+            'categories' => Category::get(),
         ]);
     }
 

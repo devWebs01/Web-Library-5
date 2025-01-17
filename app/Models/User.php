@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -28,7 +27,7 @@ class User extends Authenticatable
         'gender',
         'identify',
         'email_verified_at',
-        'status'
+        'status',
     ];
 
     /**
@@ -40,6 +39,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
