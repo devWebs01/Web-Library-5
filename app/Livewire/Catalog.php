@@ -27,7 +27,7 @@ class Catalog extends Component
 
         // Dapatkan buku berdasarkan search
         elseif ($this->search && ! $this->category_id) {
-            $books = Book::where('title', 'like', '%' . $this->search . '%')->latest()->get();
+            $books = Book::where('title', 'like', '%'.$this->search.'%')->latest()->get();
         }
 
         // Dapatkan buku berdasarkan category
@@ -38,7 +38,7 @@ class Catalog extends Component
         // Dapatkan buku berdasarkan search dan category
         else {
 
-            $books = Book::where('title', 'like', '%' . $this->search . '%')->where('category_id', $this->category_id)->latest()->get();
+            $books = Book::where('title', 'like', '%'.$this->search.'%')->where('category_id', $this->category_id)->latest()->get();
         }
 
         return view('livewire.catalog', [
