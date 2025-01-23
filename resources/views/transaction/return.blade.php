@@ -87,11 +87,10 @@
                                         <td>
                                             <div class="d-flex justify-content-center gap-2">
                                                 @if (!$item->penalties->first() && $item->penalty_total > 0)
-                                                    <a class="btn btn-outline-danger btn-sm text-danger"
-                                                        data-bs-toggle="modal" data-bs-target="#modalId">Bayar</a>
-                                                    <div class="modal fade" id="modalId" tabindex="-1"
-                                                        data-bs-backdrop="static" data-bs-keyboard="false"
-                                                        role="dialog" aria-labelledby="modalTitleId"
+                                                    <a class="btn btn-outline-danger btn-sm text-danger" data-bs-toggle="modal"
+                                                        data-bs-target="#modalId">Bayar</a>
+                                                    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static"
+                                                        data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
                                                             role="document">
@@ -101,8 +100,7 @@
                                                                         Input bukti pembayaran
                                                                     </h5>
                                                                     <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal"
-                                                                        aria-label="Close"></button>
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
                                                                     @include('penalty.create')

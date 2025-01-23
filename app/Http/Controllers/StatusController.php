@@ -31,7 +31,7 @@ class StatusController extends Controller
 
             ]);
 
-            return redirect()->route('penalties.create', $transaction->id);
+            return redirect()->route('transactions.return');
         } elseif ($request->status_id == 4) {
             // Dikembalikan...
             $transaction->update([
@@ -49,7 +49,7 @@ class StatusController extends Controller
 
             ]);
 
-            return redirect()->route('penalties.create', $transaction->id);
+            return redirect()->route('transactions.return');
         } elseif ($request->status_id == 6) {
             // Rusak Ringan...
             $transaction->update([
@@ -58,7 +58,7 @@ class StatusController extends Controller
 
             ]);
 
-            return redirect()->route('penalties.create', $transaction->id);
+            return redirect()->route('transactions.return');
         } elseif ($request->status_id == 7) {
             // Rusak Berat...
             $transaction->update([
@@ -67,7 +67,7 @@ class StatusController extends Controller
 
             ]);
 
-            return redirect()->route('penalties.create', $transaction->id);
+            return redirect()->route('transactions.return');
         } elseif ($request->status_id == 8) {
             // Tolak...
             $transaction->update([
