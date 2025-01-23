@@ -15,8 +15,8 @@
             </div>
 
             <label class="switch">
-                <input wire:model.live="search" type="text" class="form-control" name="" id=""
-                    aria-describedby="helpId" placeholder="Masukkan judul buku ...">
+                <input wire:model.live="search" type="text" class="form-control" name="" id="" aria-describedby="helpId"
+                    placeholder="Masukkan judul buku ...">
             </label>
         </div>
     </div>
@@ -30,8 +30,7 @@
                                 lc-helper="background"
                                 style="background-image: url('{{ Storage::url($book->image) }}'); background-size:cover">
                                 <div class="overlay"></div> <!-- Overlay -->
-                                <div
-                                    class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 position-relative">
+                                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 position-relative">
                                     <div class="lc-block pt-5 mt-5 mb-4">
                                         <div editable="rich">
                                             <h2 class="display-5 lh-1 fw-bold text-white lh-1">
@@ -51,8 +50,6 @@
                 <p class="text-center mt-5">Tidak ditemukan</p>
             @endif
         </div>
-        <div class="container-fluid my-5">
-            {{ $books->links() }}
-        </div>
+       
     </div>
 </div>
