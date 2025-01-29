@@ -68,7 +68,7 @@
         }
     </style>
 
-    <!-- @vite([]) -->
+    
 </head>
 
 <body>
