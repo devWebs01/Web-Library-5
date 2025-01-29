@@ -17,7 +17,7 @@
         <li
             class="menu-item {{ request()->is(['/reports/books', '/reports/users', '/reports/transactions', '/reports/penalties']) ? 'active' : '' }}">
             <a href="" class="menu-link text-body menu-toggle">
-                <i class="menu-icon tf-icons mdi mdi-human"></i>
+                <i class="menu-icon tf-icons mdi mdi-document"></i>
                 <div data-i18n="report">Laporan</div>
             </a>
             <ul class="menu-sub">
@@ -110,7 +110,7 @@
         <li
             class="menu-item {{ request()->is(['/reports/books', '/reports/users', '/reports/transactions', '/reports/penalties']) ? 'active' : '' }}">
             <a href="" class="menu-link text-body menu-toggle">
-                <i class="menu-icon tf-icons mdi mdi-human"></i>
+                <i class="menu-icon tf-icons mdi mdi-file-document"></i>
                 <div data-i18n="report">Laporan</div>
             </a>
             <ul class="menu-sub">
