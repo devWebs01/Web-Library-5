@@ -12,7 +12,9 @@
                                 <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
                                     class="avatar pull-up" aria-label="{{ $item->name }}"
                                     data-bs-original-title="{{ $item->name }}">
-                                    <img class="rounded-circle" src="/assets/img/avatars/6.png" alt="Avatar">
+                                    <img class="rounded-circle"
+                                        src="https://api.dicebear.com/9.x/adventurer-neutral/svg?seed={{ $item->name }}"
+                                        alt="Avatar">
                                 </li>
                             @empty
                             @endforelse
