@@ -3,8 +3,7 @@
         <div class="container-fluid col-xxl-8">
             <div class="row flex-lg-nowrap align-items-center g-5">
                 <div class="order-lg-1 text-lg-start text-center">
-                    <img src="/assets/img/home-image.png"
-                        class="w-50">
+                    <img src="{{ asset('/assets/img/home-image.png') }}" class="w-50">
                 </div>
                 <div class="col-lg-6 col-xl-5 text-center text-lg-start pt-lg-5 mt-xl-4">
                     <div class="lc-block mb-4">

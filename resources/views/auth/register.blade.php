@@ -31,7 +31,7 @@
                     <!-- Logo -->
                     <div class="app-brand justify-content-center mt-5">
                         <a href="/" class="app-brand-link gap-2">
-                            <img class="img-fluid" src="/assets/img/logo.png" alt="" width="28px"
+                            <img class="img-fluid" src="{{ asset('/assets/img/logo.png') }}" alt="" width="28px"
                                 height="28px">
                             <span class="app-brand-text demo text-heading fw-semibold">SI-Perpus</span>
                         </a>
@@ -126,8 +126,8 @@
                                 <div class="col-md">
                                     <div class="form-floating form-floating-outline mb-3">
                                         <input type="number"
-                                            class="form-control @error('identify') is-invalid @enderror"
-                                            name="identify" value="{{ old('identify') }}" id="identify"
+                                            class="form-control @error('identify') is-invalid @enderror" name="identify"
+                                            value="{{ old('identify') }}" id="identify"
                                             placeholder="Enter your identify" autofocus />
                                         <label for="identify">NIS/NIP</label>
                                         @error('identify')
@@ -158,8 +158,7 @@
                                 </div>
                                 <div class="col-md">
                                     <div class="form-floating form-floating-outline mb-3">
-                                        <input type="date"
-                                            class="form-control @error('birthdate') is-invalid @enderror"
+                                        <input type="date" class="form-control @error('birthdate') is-invalid @enderror"
                                             name="birthdate" value="{{ old('birthdate') }}" id="birthdate"
                                             placeholder="Enter your birthdate" autofocus />
                                         <label for="birthdate">Tanggal Lahir</label>

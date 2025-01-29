@@ -19,7 +19,7 @@
                     <!-- Logo -->
                     <div class="app-brand justify-content-center mt-5">
                         <a href="#" class="app-brand-link gap-2">
-                            <img class="img-fluid" src="/assets/img/logo.png" alt="" width="28px"
+                            <img class="img-fluid" src="{{ asset('/assets/img/logo.png') }}" alt="" width="28px"
                                 height="28px">
                             <span class="app-brand-text demo text-heading fw-semibold">SI-perpus</span>
                         </a>
