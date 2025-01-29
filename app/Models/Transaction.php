@@ -60,6 +60,6 @@ class Transaction extends Model
      */
     public function status(): BelongsTo
     {
-        return $this->belongsTo(status::class);
+        return $this->belongsTo(Status::class);
     }
 }
