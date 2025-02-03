@@ -13,7 +13,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('/assets/img/logo.png') }}" />
 
     <!-- Menu waves for no-customizer fix -->
     <link rel="stylesheet" href="/assets/vendor/libs/node-waves/node-waves.css" />
@@ -68,7 +68,7 @@
         }
     </style>
 
-
+    @vite([])
 </head>
 
 <body>
@@ -79,7 +79,6 @@
     <div class="container-fluid">
         @if (session('success'))
             <div class="alert alert-primary alert-dismissible mb-3" role="alert">
-
                 <i class="mdi mdi-check-circle-outline mdi-24px me-2"></i>
                 <span>
                     {{ session('success') }}
@@ -107,34 +106,100 @@
     </div>
     {{ $slot }}
 
-    <div class="container-fluid m-0 p-0" style=" position: absolute;
-    left: 0px;
-    top: -10px;
-    z-index: -1;">
-        <svg id="wave" style="transform:rotate(180deg); transition: 0.3s" viewBox="0 0 1440 190" version="1.1"
-            xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-                    <stop stop-color="rgba(144, 85, 253, 1)" offset="0%"></stop>
-                    <stop stop-color="rgba(0, 0, 0, 0)" offset="100%"></stop>
-                </linearGradient>
-            </defs>
-            <path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)"
-                d="M0,95L10,104.5C20,114,40,133,60,136.2C80,139,100,127,120,114C140,101,160,89,180,82.3C200,76,220,76,240,82.3C260,89,280,101,300,104.5C320,108,340,101,360,88.7C380,76,400,57,420,50.7C440,44,460,51,480,60.2C500,70,520,82,540,88.7C560,95,580,95,600,107.7C620,120,640,146,660,133C680,120,700,70,720,47.5C740,25,760,32,780,57C800,82,820,127,840,148.8C860,171,880,171,900,167.8C920,165,940,158,960,145.7C980,133,1000,114,1020,101.3C1040,89,1060,82,1080,85.5C1100,89,1120,101,1140,88.7C1160,76,1180,38,1200,44.3C1220,51,1240,101,1260,123.5C1280,146,1300,139,1320,142.5C1340,146,1360,158,1380,139.3C1400,120,1420,70,1430,44.3L1440,19L1440,190L1430,190C1420,190,1400,190,1380,190C1360,190,1340,190,1320,190C1300,190,1280,190,1260,190C1240,190,1220,190,1200,190C1180,190,1160,190,1140,190C1120,190,1100,190,1080,190C1060,190,1040,190,1020,190C1000,190,980,190,960,190C940,190,920,190,900,190C880,190,860,190,840,190C820,190,800,190,780,190C760,190,740,190,720,190C700,190,680,190,660,190C640,190,620,190,600,190C580,190,560,190,540,190C520,190,500,190,480,190C460,190,440,190,420,190C400,190,380,190,360,190C340,190,320,190,300,190C280,190,260,190,240,190C220,190,200,190,180,190C160,190,140,190,120,190C100,190,80,190,60,190C40,190,20,190,10,190L0,190Z">
-            </path>
-        </svg>
-    </div>
-
     <!-- Footer -->
-    <footer class="container p-4 text-center ">
-        <!-- Grid container -->
-        <div class="">
-            <!-- Copyright -->
-            <div class="text-center p-3">
-                © {{ date('Y') }} - <a class="text-dark" href="#">SMK 6 Kota Jambi</a>
+    <!-- footer -->
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row  justify-content-center text-center  align-items-center ">
+
+                <div class="col-12 col-md-12 col-xxl-6 px-0 ">
+                    <div class="mb-4">
+                        <a href="../index.html">
+                            <img src="../assets/images/brand/logo/logo.svg" alt="" class="mb-4 logo-inverse">
+                        </a>
+                        <p class="lead">Geek is feature rich components and beautifully Bootstrap 5 template for
+                            developers,
+                            built with bootstrap responsive framework.</p>
+                    </div>
+                    <nav class="nav nav-footer justify-content-center">
+                        <a class="nav-link" href="#">About</a>
+                        <span class="my-2 vr opacity-50"></span>
+                        <a class="nav-link" href="#">Careers </a>
+                        <span class="my-2 vr opacity-50"></span>
+                        <a class="nav-link" href="#">Contact</a>
+                        <span class="my-2 vr opacity-50"></span>
+                        <a class="nav-link" href="#">Pricing</a>
+                        <span class="my-2 vr opacity-50"></span>
+                        <a class="nav-link" href="#">Blog</a>
+                        <span class="my-2 vr opacity-50"></span>
+                        <a class="nav-link" href="#">Affilliate</a>
+                        <span class="my-2 vr opacity-50"></span>
+                        <a class="nav-link" href="#">Help</a>
+                        <span class="my-2 vr opacity-50"></span>
+                        <a class="nav-link" href="#">Investors</a>
+                    </nav>
+                </div>
             </div>
-            <!-- Copyright -->
+            <!-- Desc -->
+            <hr class="mt-6 mb-3">
+            <div class="row align-items-center">
+                <!-- Desc -->
+                <div class="col-lg-3 col-md-6 col-12">
+                    <span>© <span id="copyright4">
+                            <script>
+                                document.getElementById('copyright4').appendChild(document.createTextNode(new Date()
+                                    .getFullYear()))
+                            </script>
+                        </span> Geeks-UI, Inc. All Rights Reserved</span>
+                </div>
+
+                <!-- Links -->
+                <div class="col-12 col-md-6 col-lg-7 d-lg-flex justify-content-center">
+                    <nav class="nav nav-footer">
+                        <a class="nav-link ps-0" href="#">Privacy Policy</a>
+                        <a class="nav-link px-2 px-md-0" href="#">Cookie Notice </a>
+
+                        <a class="nav-link" href="#">Terms of Use</a>
+                    </nav>
+                </div>
+                <div class="col-lg-2 col-md-12 col-12 d-lg-flex justify-content-end">
+                    <div class="">
+                        <!--Facebook-->
+                        <a href="#" class=" me-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                            </svg>
+                        </a>
+                        <!--Twitter-->
+                        <a href="#" class=" me-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                            </svg>
+                        </a>
+
+                        <!--GitHub-->
+                        <a href="#" class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links -->
+
+
+        </div>
     </footer>
+
     <!-- Footer -->
 
     <!-- Core JS -->

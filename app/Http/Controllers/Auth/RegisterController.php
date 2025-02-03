@@ -86,6 +86,6 @@ class RegisterController extends Controller
     {
         $this->guard()->logout();
 
-        return back()->with('success', 'Terima kasih atas mendaftar di situs Perpustakaan. Mohon tunggu konfirmasi dari administrator dalam waktu 24x6 jam atau kunjungi perpustakaan langsung..');
+        return back()->with('success', 'Terima kasih atas mendaftar di situs Perpustakaan. Mohon tunggu konfirmasi dari petugas perpustakaan atau kunjungi perpustakaan langsung.');
     }
 }
