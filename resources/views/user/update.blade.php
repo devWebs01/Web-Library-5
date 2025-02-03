@@ -20,47 +20,7 @@
                     </h5>
                     <p>Kosongkan saja password jika tidak menggubah password</p>
                     <div class="row">
-                        <div class="col-md">
-                            <div class="form-floating form-floating-outline mb-3">
-                                <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ $user->name }}" id="name"
-                                    placeholder="Enter your name" />
-                                <label for="name">Nama Lengkap</label>
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-md">
-                            <div class="form-floating form-floating-outline mb-3">
-                                <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ $user->email }}" placeholder="Enter your email" />
-                                <label for="email">Email</label>
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
-                            <div class="form-floating form-floating-outline mb-3">
-                                <input type="number" class="form-control @error('telp') is-invalid @enderror"
-                                    name="telp" value="{{ $user->telp }}" id="telp"
-                                    placeholder="Enter your telp" />
-                                <label for="telp">Telp</label>
-                                @error('telp')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-md">
+                        <div class="col-md-6">
                             <div class="form-floating form-floating-outline mb-3">
                                 <input type="number" class="form-control @error('identify') is-invalid @enderror"
                                     name="identify" value="{{ $user->identify }}" id="identify"
@@ -74,9 +34,47 @@
                             </div>
                         </div>
 
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
+                        <div class="col-md-6">
+                            <div class="form-floating form-floating-outline mb-3">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                    name="name" value="{{ $user->name }}" id="name"
+                                    placeholder="Enter your name" />
+                                <label for="name">Nama Lengkap</label>
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating form-floating-outline mb-3">
+                                <input type="text" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" value="{{ $user->email }}" placeholder="Enter your email" />
+                                <label for="email">Email</label>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-floating form-floating-outline mb-3">
+                                <input type="number" class="form-control @error('telp') is-invalid @enderror"
+                                    name="telp" value="{{ $user->telp }}" id="telp"
+                                    placeholder="Enter your telp" />
+                                <label for="telp">Telp</label>
+                                @error('telp')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
                             <div class="form-floating form-floating-outline mb-3">
                                 <input type="password" class="form-control @error('password') is-invalid @enderror"
                                     name="password" id="password" placeholder="Enter your password" />
@@ -88,7 +86,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md">
+                        <div class="col-md-6">
                             <div class="form-floating form-floating-outline mb-3">
                                 <input type="date" class="form-control @error('birthdate') is-invalid @enderror"
                                     name="birthdate" value="{{ $user->birthdate }}" id="birthdate"
@@ -103,7 +101,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md">
+                        <div class="col-md-6">
                             <div class="form-floating form-floating-outline mb-3">
                                 <select class="form-select form-control @error('gender') is-invalid @enderror"
                                     name="gender" id="gender">
@@ -121,7 +119,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md">
+                        <div class="col-md-6">
                             <div class="form-floating form-floating-outline mb-3">
                                 <select class="form-select form-control @error('role') is-invalid @enderror"
                                     name="role" id="role">

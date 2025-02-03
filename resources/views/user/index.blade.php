@@ -5,26 +5,36 @@
         <div class="col-md">
             <div class="card">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <p class="mb-0">Total {{ $member->count() }} users</p>
-                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                            @forelse ($member->take(5) as $item)
-                                <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                    class="avatar pull-up" aria-label="{{ $item->name }}"
-                                    data-bs-original-title="{{ $item->name }}">
-                                    <img class="rounded-circle"
-                                        src="https://api.dicebear.com/9.x/adventurer-neutral/svg?seed={{ $item->name }}"
-                                        alt="Avatar">
-                                </li>
-                            @empty
-                            @endforelse
-                        </ul>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-end">
-                        <div class="role-heading">
-                            <h5 class="mb-1">Anggota</h5>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="card-body">
+                                <h4 class="card-title display-6 mb-4 text-truncate lh-sm fw-bold">
+                                    Data User
+                                </h4>
+                                <p class="mb-0">Kamu mempunyai
+                                    <span class="text-primary">
+                                        {{ $member->count() }} anggota
+                                    </span>
+                                    yang terdaftar saat ini.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 position-relative align-self-center d-none d-md-block">
+                            <ul class="list-unstyled d-flex align-items-center avatar-group mb-0 justify-content-end">
+                                @forelse ($member->take(5) as $item)
+                                    <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
+                                        class="avatar pull-up" aria-label="{{ $item->name }}"
+                                        data-bs-original-title="{{ $item->name }}">
+                                        <img class="rounded-circle"
+                                            src="https://api.dicebear.com/9.x/adventurer-neutral/svg?seed={{ $item->name }}"
+                                            alt="Avatar">
+                                    </li>
+                                @empty
+                                @endforelse
+                            </ul>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

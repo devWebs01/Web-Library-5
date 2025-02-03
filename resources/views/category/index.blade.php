@@ -5,12 +5,14 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="card-body">
-                    <h4 class="card-title display-6 mb-4 text-truncate lh-sm">Selamat {{ Auth()->user()->name }}! 🎉</h4>
+                    <h4 class="card-title display-6 mb-4 text-truncate lh-sm fw-bold">
+                        Data Kategori
+                    </h4>
                     <p class="mb-0">Kamu mempunyai {{ $count }} buku yang terdaftar dalam
                         {{ $categories->count() }} kategori buku saat ini.</p>
                 </div>
             </div>
-            <div class="col-12 col-md-6 position-relative text-center align-self-end">
+            <div class="col-12 col-md-6 position-relative text-center align-self-end d-none d-md-block">
                 <img src="https://demos.themeselection.com/materio-bootstrap-html-admin-template/assets/img/front-pages/landing-page/sitting-girl-with-laptop.png"
                     class="card-img-position bottom-0 w-25 end-0 scaleX-n1-rtl " alt="View Profile">
             </div>

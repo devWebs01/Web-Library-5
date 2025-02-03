@@ -1,58 +1,35 @@
 <x-auth.layout>
     <x-slot name="title">Confirmation Account</x-slot>
     @include('layouts.table')
-    <div class="row mb-3 gy-3">
-        <div class="col-md">
-            <div class="card">
+
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col-12 col-md-6">
                 <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <p class="mb-0">Total {{ $verified->count() }} users</p>
-                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                            @forelse ($verified->take(5) as $item)
-                                <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                    class="avatar pull-up" aria-label="{{ $item->name }}"
-                                    data-bs-original-title="{{ $item->name }}">
-                                    <img class="rounded-circle"
-                                        src="https://api.dicebear.com/9.x/adventurer-neutral/svg?seed={{ $item->name }}"
-                                        alt="Avatar">
-                                </li>
-                            @empty
-                            @endforelse
-                        </ul>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-end">
-                        <div class="role-heading">
-                            <h5 class="mb-1">Terkonfirmasi</h5>
-                        </div>
-                    </div>
+                    <h4 class="card-title display-6 mb-4 text-truncate lh-sm fw-bold">
+                        Data Konfirmasi User
+                    </h4>
+                    <p class="mb-0">Kamu mempunyai
+                        <span class="text-primary">
+                            {{ $non_verified->count() }} anggota
+                        </span>
+                        yang perlu di konfirmasi/tidak.
+                    </p>
                 </div>
             </div>
-        </div>
-        <div class="col-md">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <p class="mb-0">Total {{ $non_verified->count() }} users</p>
-                        <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                            @forelse ($non_verified->take(5) as $item)
-                                <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
-                                    class="avatar pull-up" aria-label="{{ $item->name }}"
-                                    data-bs-original-title="{{ $item->name }}">
-                                    <img class="rounded-circle"
-                                        src="https://api.dicebear.com/9.x/adventurer-neutral/svg?seed={{ $item->name }}"
-                                        alt="Avatar">
-                                </li>
-                            @empty
-                            @endforelse
-                        </ul>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-end">
-                        <div class="role-heading">
-                            <h5 class="mb-1">Menunggu Konfirmasi</h5>
-
-                        </div>
-                    </div>
-                </div>
+            <div class="col-12 col-md-6 position-relative align-self-center d-none d-md-block">
+                <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
+                    @forelse ($non_verified->take(5) as $item)
+                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top"
+                            class="avatar pull-up" aria-label="{{ $item->name }}"
+                            data-bs-original-title="{{ $item->name }}">
+                            <img class="rounded-circle"
+                                src="https://api.dicebear.com/9.x/adventurer-neutral/svg?seed={{ $item->name }}"
+                                alt="Avatar">
+                        </li>
+                    @empty
+                    @endforelse
+                </ul>
             </div>
         </div>
     </div>

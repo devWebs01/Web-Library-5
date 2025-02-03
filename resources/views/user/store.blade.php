@@ -21,47 +21,7 @@
                             atau
                             '01122018'</span></p>
                     <div class="row">
-                        <div class="col-md">
-                            <div class="form-floating form-floating-outline mb-3">
-                                <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                    name="name" value="{{ old('name') }}" id="name"
-                                    placeholder="Enter your name" autofocus />
-                                <label for="name">Nama Lengkap</label>
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-md">
-                            <div class="form-floating form-floating-outline mb-3">
-                                <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" placeholder="Enter your email" />
-                                <label for="email">Email</label>
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
-                            <div class="form-floating form-floating-outline mb-3">
-                                <input type="number" class="form-control @error('telp') is-invalid @enderror"
-                                    name="telp" value="{{ old('telp') }}" id="telp"
-                                    placeholder="Enter your telp" autofocus />
-                                <label for="telp">Telp</label>
-                                @error('telp')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-md">
+                        <div class="col-md-6">
                             <div class="form-floating form-floating-outline mb-3">
                                 <input type="number" class="form-control @error('identify') is-invalid @enderror"
                                     name="identify" value="{{ old('identify') }}" id="identify"
@@ -75,9 +35,46 @@
                             </div>
                         </div>
 
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
+                        <div class="col-md-6">
+                            <div class="form-floating form-floating-outline mb-3">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                    name="name" value="{{ old('name') }}" id="name"
+                                    placeholder="Enter your name" autofocus />
+                                <label for="name">Nama Lengkap</label>
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating form-floating-outline mb-3">
+                                <input type="text" class="form-control @error('email') is-invalid @enderror"
+                                    name="email" value="{{ old('email') }}" placeholder="Enter your email" />
+                                <label for="email">Email</label>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating form-floating-outline mb-3">
+                                <input type="number" class="form-control @error('telp') is-invalid @enderror"
+                                    name="telp" value="{{ old('telp') }}" id="telp"
+                                    placeholder="Enter your telp" autofocus />
+                                <label for="telp">Telp</label>
+                                @error('telp')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
                             <div class="form-floating form-floating-outline mb-3">
                                 <input type="date" class="form-control @error('birthdate') is-invalid @enderror"
                                     name="birthdate" value="{{ old('birthdate') }}" id="birthdate"
@@ -90,7 +87,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md">
+                        <div class="col-md-6">
                             <div class="form-floating form-floating-outline mb-3">
                                 <select class="form-select form-control @error('gender') is-invalid @enderror"
                                     name="gender" id="gender">
@@ -106,7 +103,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md">
+                        <div class="col-md-6">
                             <div class="form-floating form-floating-outline mb-3">
                                 <select class="form-select form-control @error('role') is-invalid @enderror"
                                     name="role" id="role">
@@ -125,28 +122,28 @@
                                 @enderror
                             </div>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="form-floating form-floating-outline mb-3">
-                            <select class="form-select form-control @error('status') is-invalid @enderror"
-                                name="status" id="status">
-                                <option selected disabled>Pilih satu</option>
-                                <option value="Siswa">Siswa
-                                </option>
-                                <option value="Guru">Guru</option>
-                                @if (auth()->user()->role !== 'Petugas')
-                                    <option value="Staf">Staf
+                        <div class="col-md-6">
+                            <div class="form-floating form-floating-outline mb-3">
+                                <select class="form-select form-control @error('status') is-invalid @enderror"
+                                    name="status" id="status">
+                                    <option selected disabled>Pilih satu</option>
+                                    <option value="Siswa">Siswa
                                     </option>
-                                    <option value="Kepala">Kepala
-                                    </option>
-                                @endif
-                            </select>
-                            <label for="status">Status</label>
-                            @error('status')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                                    <option value="Guru">Guru</option>
+                                    @if (auth()->user()->role !== 'Petugas')
+                                        <option value="Staf">Staf
+                                        </option>
+                                        <option value="Kepala">Kepala
+                                        </option>
+                                    @endif
+                                </select>
+                                <label for="status">Status</label>
+                                @error('status')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
                     </div>
                 </div>

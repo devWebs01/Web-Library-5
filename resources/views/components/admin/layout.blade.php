@@ -48,7 +48,7 @@
         }
     </style>
 
-
+    @vite([])
 </head>
 
 <body>
@@ -60,7 +60,8 @@
 
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-body shadow">
                 <div class="app-brand demo">
-                    <img class="img-fluid" src="{{ asset('/assets/img/logo.png') }}" alt="" width="28px" height="28px">
+                    <img class="img-fluid" src="{{ asset('/assets/img/logo.png') }}" alt="" width="28px"
+                        height="28px">
                     <a href="/home" class="app-brand-link">
                         <span class="app-brand-text text-body demo menu-text fw-semibold ms-2">SI-Perpus</span>
                     </a>
