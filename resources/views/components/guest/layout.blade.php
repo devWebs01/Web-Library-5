@@ -68,7 +68,7 @@
         }
     </style>
 
-    
+
 </head>
 
 <body class="bg-white">
@@ -113,8 +113,8 @@
                 <div class="col-12 col-md-12 col-xxl-6 px-0">
                     <div class="mb-4">
                         <a href="/">
-                            <img src="http://127.0.0.1:8000/assets/img/logo.png" alt="logo"
-                                class="mb-4 logo-inverse" width="60" height="60">
+                            <img src="{{ asset('/assets/img/logo.png') }}" alt="logo" class="mb-4 logo-inverse"
+                                width="60" height="60">
                         </a>
                         <p class="lead">Sistem Perpustakaan Sekolah yang memudahkan siswa dan guru dalam mencari,
                             meminjam, dan mengelola koleksi buku secara digital.</p>
