@@ -175,7 +175,7 @@ state([
                                             </div>
                                             <div class="ms-3">
                                                 <!-- content -->
-                                                <h3 class="mb-2">Katalog Buku Lengkap</h3>
+                                                <h3 class="mb-2">Katalog Buku</h3>
                                                 <p class="mb-0 fs-4">
                                                     Temukan berbagai koleksi buku dengan fitur pencarian canggih dan
                                                     kategori yang jelas.
@@ -197,8 +197,7 @@ state([
                                             <div class="ms-3">
                                                 <h3 class="mb-2">Peminjaman & Pengembalian Mudah</h3>
                                                 <p class="mb-0 fs-4">
-                                                    Proses peminjaman dan pengembalian buku lebih praktis dengan sistem
-                                                    otomatis.
+                                                    Proses peminjaman dan pengembalian buku lebih praktis dengan sistem.
                                                 </p>
                                             </div>
                                         </div>
