@@ -91,7 +91,6 @@ state([
     @volt
         <div>
 
-
             <div class="overflow-hidden my-5 mx-3">
                 <section class="py-lg-16 py-6">
                     <div class="container-fluid">
@@ -102,7 +101,7 @@ state([
                                             <span class="text-primary">Perpustakaan!</span>
                                         </u>
                                     </h1>
-                                    <p class="mb-4">Jelajahi banyak buku dari berbagai kategori dan pinjam mudah.</p>
+                                    <p class="mb-4 display-6">Jelajahi banyak buku dari berbagai kategori dan pinjam mudah.</p>
 
                                 </div>
                             </div>
@@ -127,8 +126,8 @@ state([
 
                 <section class="container-fluid mt-5 py-5">
                     <div class="my-5 py-5">
-                        <h3 class="fw-bold">Koleksi Buku</h3>
-                        <p class="text-muted">Temukan berbagai buku menarik yang tersedia di perpustakaan sekolah kami.</p>
+                        <h3 class="fw-bold mb-0">Koleksi Buku</h3>
+                        <p class="text-muted h4">Temukan berbagai buku menarik yang tersedia di perpustakaan sekolah kami.</p>
 
                         <swiper-container class="mySwiper" init="false">
                             @foreach ($books as $book)
