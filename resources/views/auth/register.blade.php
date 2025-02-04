@@ -31,8 +31,8 @@
                     <!-- Logo -->
                     <div class="app-brand justify-content-center mt-5">
                         <a href="/" class="app-brand-link gap-2">
-                            <img class="img-fluid" src="{{ asset('/assets/img/logo.png') }}" alt="" width="28px"
-                                height="28px">
+                            <img class="img-fluid" src="{{ asset('/assets/img/logo.png') }}" alt=""
+                                width="28px" height="28px">
                             <span class="app-brand-text demo text-heading fw-semibold">SI-Perpus</span>
                         </a>
                     </div>
@@ -45,7 +45,22 @@
                             @csrf
                             <input type="hidden" name="role" value="Anggota">
                             <div class="row">
-                                <div class="col-md">
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline mb-3">
+                                        <input type="number"
+                                            class="form-control @error('identify') is-invalid @enderror" name="identify"
+                                            value="{{ old('identify') }}" id="identify"
+                                            placeholder="Enter your identify" autofocus />
+                                        <label for="identify">NIS/NIP</label>
+                                        @error('identify')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-3">
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
                                             name="name" value="{{ old('name') }}" id="name"
@@ -58,7 +73,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md">
+                                <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-3">
                                         <input type="text" class="form-control @error('email') is-invalid @enderror"
                                             name="email" value="{{ old('email') }}" placeholder="Enter your email" />
@@ -70,9 +85,8 @@
                                         @enderror
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md">
+
+                                <div class="col-md-6">
                                     <div class="mb-3 form-password-toggle">
                                         <div class="input-group input-group-merge">
                                             <div class="form-floating form-floating-outline">
@@ -93,7 +107,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md">
+                                <div class="col-md-6">
                                     <div class="mb-3 form-password-toggle">
                                         <div class="input-group input-group-merge">
                                             <div class="form-floating form-floating-outline">
@@ -108,9 +122,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md">
+
+                                <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-3">
                                         <input type="number" class="form-control @error('telp') is-invalid @enderror"
                                             name="telp" value="{{ old('telp') }}" id="telp"
@@ -123,24 +136,11 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md">
-                                    <div class="form-floating form-floating-outline mb-3">
-                                        <input type="number"
-                                            class="form-control @error('identify') is-invalid @enderror" name="identify"
-                                            value="{{ old('identify') }}" id="identify"
-                                            placeholder="Enter your identify" autofocus />
-                                        <label for="identify">NIS/NIP</label>
-                                        @error('identify')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
+
 
                             </div>
                             <div class="row">
-                                <div class="col-md">
+                                <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-3">
                                         <select class="form-select form-control @error('gender') is-invalid @enderror"
                                             name="gender" id="gender">
@@ -156,9 +156,10 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md">
+                                <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-3">
-                                        <input type="date" class="form-control @error('birthdate') is-invalid @enderror"
+                                        <input type="date"
+                                            class="form-control @error('birthdate') is-invalid @enderror"
                                             name="birthdate" value="{{ old('birthdate') }}" id="birthdate"
                                             placeholder="Enter your birthdate" autofocus />
                                         <label for="birthdate">Tanggal Lahir</label>

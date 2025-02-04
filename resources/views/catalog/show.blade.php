@@ -13,8 +13,8 @@
                     </div>
                 </div>
                 <div class="col-md">
-                    <h2 class="fw-bold text-wrap mb-0 lh-1">{{ $book->title }}</h2>
-                    <p>{{ $book->category->name }}</p>
+                    <p class="mb-0 fw-semibold text-primary">{{ $book->category->name }}</p>
+                    <h2 class="fw-bold text-wrap mb-3 lh-1">{{ $book->title }}</h2>
                     <p>{{ $book->synopsis }}</p>
                     <p class="text-wrap"><i class="mdi mdi-book-alphabet mdi-24px me-2"></i>Jenis Buku:
                         {{ $book->type }}</p>

@@ -97,7 +97,7 @@
                                 <a class="nav-link dropdown-toggle hide-arrow p-0" href="#;"
                                     data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
-                                        <img src="https://demos.themeselection.com/materio-bootstrap-html-admin-template/assets/img/avatars/2.png"
+                                        <img src="https://api.dicebear.com/9.x/adventurer-neutral/svg?seed={{ Auth()->user()->name }}"
                                             alt class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </a>
@@ -124,7 +124,9 @@
                                     <li>
                                         <a class="dropdown-item" href="{{ route('profile', Auth()->user()->slug) }}">
                                             <i class="mdi mdi-account-outline me-1 mdi-20px"></i>
-                                            <span class="align-middle">My Profile</span>
+                                            <span class="align-middle">
+                                                Profile Saya
+                                            </span>
                                         </a>
                                     </li>
                                     <li>
@@ -135,7 +137,9 @@
                                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                             <i class="mdi mdi-power me-1 mdi-20px"></i>
-                                            <span class="align-middle">Log Out</span>
+                                            <span class="align-middle">
+                                                Keluar
+                                            </span>
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                             class="d-none">

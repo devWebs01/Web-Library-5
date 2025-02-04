@@ -71,7 +71,7 @@
     @vite([])
 </head>
 
-<body>
+<body class="bg-white">
     @include('layouts.payment_date')
 
     <x-guest.navbar></x-guest.navbar>
@@ -107,45 +107,46 @@
     {{ $slot }}
 
     <!-- footer -->
-    <footer class="pt-5 pb-3">
+    <footer class="pt-5 mt-0 pb-3 bg-dark text-white">
         <div class="container">
             <div class="row justify-content-center text-center align-items-center">
                 <div class="col-12 col-md-12 col-xxl-6 px-0">
                     <div class="mb-4">
                         <a href="/">
                             <img src="http://127.0.0.1:8000/assets/img/logo.png" alt="logo"
-                                class="mb-4 logo-inverse" width="30" height="30">
+                                class="mb-4 logo-inverse" width="60" height="60">
                         </a>
                         <p class="lead">Sistem Perpustakaan Sekolah yang memudahkan siswa dan guru dalam mencari,
                             meminjam, dan mengelola koleksi buku secara digital.</p>
                     </div>
                     <nav class="nav nav-footer justify-content-center">
-                        <a class="nav-link" href="/">Beranda</a>
+                        <a class="nav-link text-white" href="/">Beranda</a>
                         <span class="my-2 vr opacity-50"></span>
-                        <a class="nav-link" href="{{ route('catalog.index') }}">Koleksi Buku</a>
+                        <a class="nav-link text-white" href="{{ route('catalog.index') }}">Koleksi Buku</a>
                         <span class="my-2 vr opacity-50"></span>
 
                         @auth
                             @if (auth()->user()->role == 'Anggota')
-                                <a class="nav-link" href="{{ route('catalog.history') }}">Riwayat</a>
+                                <a class="nav-link text-white" href="{{ route('catalog.history') }}">Riwayat</a>
                                 <span class="my-2 vr opacity-50"></span>
-                                <a class="nav-link text-danger" href="{{ route('logout') }}"
+                                <a class="nav-link text-white text-danger" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
                             @else
-                                <a class="nav-link" href="/home">Beranda Admin</a>
+                                <a class="nav-link text-white" href="/home">Beranda Admin</a>
                             @endif
                         @else
-                            <a class="nav-link" href="/login">Masuk</a>
+                            <a class="nav-link text-white" href="/login">Masuk</a>
                             <span class="my-2 vr opacity-50"></span>
-                            <a class="nav-link" href="/register">Daftar</a>
+                            <a class="nav-link text-white" href="/register">Daftar</a>
                         @endauth
                     </nav>
 
                 </div>
             </div>
+
             <hr class="mt-6 mb-3">
             <div class="row align-items-center">
                 <div class="text-center col-12">
