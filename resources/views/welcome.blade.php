@@ -101,7 +101,8 @@ state([
                                             <span class="text-primary">Perpustakaan!</span>
                                         </u>
                                     </h1>
-                                    <p class="mb-4 display-6">Jelajahi banyak buku dari berbagai kategori dan pinjam mudah.</p>
+                                    <p class="mb-4 display-6">Jelajahi banyak buku dari berbagai kategori dan pinjam mudah.
+                                    </p>
 
                                 </div>
                             </div>
@@ -127,16 +128,17 @@ state([
                 <section class="container-fluid mt-5 py-5">
                     <div class="my-5 py-5">
                         <h3 class="fw-bold mb-0">Koleksi Buku</h3>
-                        <p class="text-muted h4">Temukan berbagai buku menarik yang tersedia di perpustakaan sekolah kami.</p>
+                        <p class="text-muted h4">Temukan berbagai buku menarik yang tersedia di perpustakaan sekolah kami.
+                        </p>
 
                         <swiper-container class="mySwiper" init="false">
                             @foreach ($books as $book)
                                 <swiper-slide>
-                                    <div class="card">
+                                    <a href="{{ route('catalog.show', $book->id) }}" class="card">
                                         {{-- {{ $book }} --}}
                                         <img class="card-img-top" style="object-fit: cover; width: 100%; height: 400px;"
                                             src="{{ Storage::url($book->image) }}" alt="{{ $book->title }}" />
-                                    </div>
+                                    </a>
 
                                 </swiper-slide>
                             @endforeach
