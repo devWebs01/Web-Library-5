@@ -128,7 +128,10 @@ state([
                                         <p class="mb-0 fs-5">
                                             Perpustakaan sekolah kami menyediakan berbagai buku pelajaran, fiksi, dan
                                             referensi untuk menunjang
-                                            kegiatan belajar siswa. Dengan sistem peminjaman yang mudah dan koleksi yang
+                                            kegiatan belajar siswa.
+                                        </p>
+                                        <p class="mb-0 fs-5">
+                                            Dengan sistem peminjaman yang mudah dan koleksi yang
                                             terus diperbarui, kami
                                             berkomitmen untuk meningkatkan minat baca siswa.
                                         </p>
