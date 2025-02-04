@@ -111,7 +111,7 @@ state([
                                     <div class="position-absolute top-0 start-0 translate-middle  d-none d-md-block">
                                         <img src="https://geeksui.codescandy.com/geeks/assets/images/svg/graphics-2.svg">
                                     </div>
-                                    <img src="https://i0.wp.com/smkn6jambi.wordpress.com/wp-content/uploads/2018/04/img_20180319_091842_hdr.jpeg?w=1200&h=&ssl=1"
+                                    <img src="https://kopasjambi.com/wp-content/uploads/2024/06/Bingung-Mau-Masuk-SMKN-Mana-di-Kota-Jambi-Berikut-Rincian-Sekolah-dan-Jurusan-yang-Tersedia.jpg"
                                         alt="online course"
                                         class="img-fluid rounded-4 w-100 z-n1 position-relative rounded">
                                     <div class="position-absolute top-100 start-100 translate-middle  d-none d-md-block">
