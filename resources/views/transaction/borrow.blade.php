@@ -9,7 +9,8 @@
                     <h4 class="card-title display-6 mb-4 text-truncate lh-sm fw-bold">
                         Data Peminjaman
                     </h4>
-                    <p class="mb-0">Perpustakaan memiliki total {{ $transactions->count() }} transaksi peminjaman buku</p>
+                    <p class="mb-0">Perpustakaan memiliki total {{ $transactions->count() }} transaksi peminjaman buku
+                    </p>
                 </div>
             </div>
             <div class="col-12 col-md-6 position-relative text-center align-self-end d-none d-md-block">
@@ -91,9 +92,9 @@
                                                     @method('PUT')
                                                     <div class="modal-body">
 
-                                                        @livewire('status', ['statusId' => $item->id])
+                                                        @livewire('status', ['statusId' => $item->id, 'item' => $item])
                                                     </div>
-                                                    <div class="modal-footer row">
+                                                    <div class="modal-footer">
                                                         <button type="button" class="col-md btn btn-secondary"
                                                             data-bs-dismiss="modal">
                                                             Kembali

@@ -9,6 +9,8 @@ class Status extends Component
 {
     public $statusId;
 
+    public $item;
+
     public $status;
 
     public $selectedStatus;

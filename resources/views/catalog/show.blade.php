@@ -15,7 +15,7 @@
                 <div class="col-md">
                     <p class="mb-0 fw-semibold text-primary">{{ $book->category->name }}</p>
                     <h2 class="fw-bold text-wrap mb-3 lh-1">{{ $book->title }}</h2>
-                    <p>{{ $book->synopsis }}</p>
+                    <p>{{ Str::limit($book->synopsis, 300, '...') }}</p>
                     <p class="text-wrap"><i class="mdi mdi-book-alphabet mdi-24px me-2"></i>Jenis Buku:
                         {{ $book->type }}</p>
                     <p class="text-wrap"><i class="mdi mdi-identifier mdi-24px me-2"></i>ISBN:

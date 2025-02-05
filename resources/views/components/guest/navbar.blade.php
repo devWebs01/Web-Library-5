@@ -19,6 +19,11 @@
                         <a class="nav-link fw-bold" href="{{ route('catalog.index') }}">Koleksi
                             Buku</a>
                     </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link fw-bold" href="{{ route('member.profile') }}">
+                            Profile User
+                        </a>
+                    </li>
                 </ul>
                 <div>
                     @auth

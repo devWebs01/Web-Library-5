@@ -113,6 +113,8 @@ Route::middleware(['auth', 'role:Anggota'])->group(function () {
         Route::get('/history', [CatalogController::class, 'history'])->name('catalog.history');
     });
 
+    Route::view('user-profile', 'member-profile')->name('member.profile');
+
 });
 
 Route::prefix('penalties')->group(function () {

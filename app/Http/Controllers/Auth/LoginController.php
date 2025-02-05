@@ -46,7 +46,7 @@ class LoginController extends Controller
             return redirect('/login')->with('error', 'Akun Anda belum terverifikasi.');
         } else {
             if (Auth()->user()->role == 'Anggota') {
-                return redirect('/')->with('success', 'Selamat datang '.Auth()->user()->name);
+                return redirect()->route('member.profile')->with('success', 'Selamat datang '.Auth()->user()->name);
             } else {
                 return redirect('/home')->with('success', 'Selamat datang '.Auth()->user()->name);
             }

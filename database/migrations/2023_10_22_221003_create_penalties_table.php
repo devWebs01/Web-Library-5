@@ -17,7 +17,7 @@ class CreatePenaltiesTable extends Migration
         Schema::create('penalties', function (Blueprint $table) {
             $table->id();
             $table->foreignId('transaction_id')->constrained()->onDelete('cascade');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('status');
             $table->timestamps();
         });
