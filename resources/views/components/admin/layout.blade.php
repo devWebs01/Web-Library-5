@@ -48,7 +48,7 @@
         }
     </style>
 
-    
+    @vite([])
 </head>
 
 <body>
