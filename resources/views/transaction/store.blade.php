@@ -3,7 +3,7 @@
     <input type="hidden" name="status" value="Berjalan">
     <div class="card-body">
         <div class="row">
-            <div class="col-md">
+            <div class="col-12">
                 <div class="mb-3">
                     <label for="user_id" class="form-label">Nama Lengkap</label>
                     <select class="form-select" name="user_id" id="user_id">
@@ -15,7 +15,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md">
+            <div class="col-12">
                 <div class="mb-3">
                     <label for="book_id" class="form-label">Buku</label>
                     <select class="form-select" name="book_id" id="book_id">
