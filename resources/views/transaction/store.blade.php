@@ -25,7 +25,7 @@
                                 class="text-truncate
                             {{ $book->book_count == 0 ? 'text-danger' : '' }}"
                                 value="{{ $book->id }}" {{ $book->book_count == 0 ? 'disabled' : '' }}>
-                                {{ $book->type }} -
+                                {{ $book->category->name }} -
                                 {{ $book->title }} : {{ $book->book_count }}</option>
                         @endforeach
                     </select>
