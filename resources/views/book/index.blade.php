@@ -29,9 +29,9 @@
                         <tr>
                             <th>No.</th>
                             <th>judul</th>
+                            <th>kategori buku</th>
                             <th>Jenis buku</th>
                             <th>stok buku</th>
-                            <th>kategori buku</th>
                             <th>Opsi</th>
                         </tr>
                     </thead>
@@ -39,10 +39,10 @@
                         @foreach ($books as $no => $book)
                             <tr>
                                 <td>{{ ++$no }}.</td>
-                                <td>{{ $book->title }}</td>
+                                <td>{{ Str::limit($book->title, 30, '...') }}</td>
+                                <td><span class="badge bg-primary">{{ $book->category->name }}</span></td>
                                 <td>{{ $book->type }}</td>
                                 <td>{{ $book->book_count }}</td>
-                                <td><span class="badge bg-primary">{{ $book->category->name }}</span></td>
                                 <td>
                                     <a class="btn btn-outline-primary btn-sm"
                                         href="{{ route('books.show', $book->id) }}" role="button">Lihat</a>
