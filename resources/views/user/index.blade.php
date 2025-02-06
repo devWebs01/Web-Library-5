@@ -49,6 +49,7 @@
                     <thead>
                         <tr>
                             <th>No.</th>
+                            <th>NIS/NIP</th>
                             <th>Nama Lengkap</th>
                             <th>role</th>
                             <th>status</th>
@@ -60,6 +61,7 @@
                         @foreach ($users as $no => $user)
                             <tr>
                                 <td>{{ ++$no }}.</td>
+                                <td>{{ $user->identify }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>
                                     <span class="badge bg-primary">{{ $user->role }}</span>
