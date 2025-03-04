@@ -16,7 +16,6 @@
                             <th>Status</th>
                             <th>Total Denda</th>
                             <th>Status Denda</th>
-                            <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,11 +33,6 @@
                                     @elseif ($item->penalty_total == 0)
                                         -
                                     @endif
-                                </td>
-                                <td>
-                                    <a href="{{ route('penalties.show', $item->id) }}" class="btn btn-primary btn-sm">
-                                        Lihat
-                                    </a>
                                 </td>
                             </tr>
                         @endforeach
