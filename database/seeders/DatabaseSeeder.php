@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             StatusSeeder::class,
             // APISeeder::class,
-            // BookSeeder::class,
             GoogleBookSeeder::class,
+            BookSeeder::class,
             TransactionSeeder::class,
         ]);
 
